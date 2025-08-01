@@ -125,14 +125,34 @@ export default function Home() {
           return;
         }
 
-        // Send welcome email
+        // Generate verification token after successful CDP OTP verification
+        const tokenResponse = await fetch("/api/verify-cdp", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, walletAddress }),
+        });
+
+        if (!tokenResponse.ok) {
+          reject("Verification failed");
+          return;
+        }
+
+        const { token } = await tokenResponse.json();
+
+        // Send welcome email with verification token
         const mailResponse = await fetch("/api/mail", {
           cache: "no-store",
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ firstname: email.split('@')[0], email }),
+          body: JSON.stringify({ 
+            firstname: email.split('@')[0], 
+            email, 
+            token 
+          }),
         });
 
         if (!mailResponse.ok) {
@@ -144,13 +164,18 @@ export default function Home() {
           return;
         }
 
-        // Save to Notion with wallet address
+        // Save to Notion with wallet address and verification token
         const notionResponse = await fetch("/api/notion", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name: email.split('@')[0], email, walletAddress }),
+          body: JSON.stringify({ 
+            name: email.split('@')[0], 
+            email, 
+            walletAddress, 
+            token 
+          }),
         });
 
         if (!notionResponse.ok) {

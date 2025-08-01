@@ -1,10 +1,46 @@
 import { Client } from "@notionhq/client";
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { getDatabase } from "../../../lib/mongodb";
+import { verifyToken } from "../../../lib/verification-token";
+
+// Input validation schema
+const notionSchema = z.object({
+  name: z.string().max(100),
+  email: z.string().email().max(254),
+  walletAddress: z.string().regex(/^0x[a-fA-F0-9]{40}$/, "Invalid wallet address"),
+  token: z.string(), // Verification token required
+});
 
 export async function POST(request: Request) {
-  const body = await request.json();
   try {
+    // Basic origin check
+    const origin = request.headers.get('origin');
+    if (!origin?.includes('emailwallets.com') && !origin?.includes('localhost')) {
+      return NextResponse.json({ error: "Unauthorized origin" }, { status: 403 });
+    }
+
+    const body = await request.json();
+    
+    // Validate input
+    const validation = notionSchema.safeParse(body);
+    if (!validation.success) {
+      return NextResponse.json({ 
+        error: "Invalid input", 
+        details: validation.error.errors 
+      }, { status: 400 });
+    }
+
+    const { name, email, walletAddress, token } = validation.data;
+
+    // Verify the token to ensure CDP OTP verification happened
+    const tokenPayload = await verifyToken(token);
+    if (!tokenPayload || tokenPayload.email !== email || tokenPayload.walletAddress !== walletAddress) {
+      return NextResponse.json({ 
+        error: "Invalid or expired verification token" 
+      }, { status: 401 });
+    }
+
     const notion = new Client({ auth: process.env.NOTION_SECRET });
     
     // Check Notion for existing emails
@@ -13,7 +49,7 @@ export async function POST(request: Request) {
       filter: {
         property: "Email",
         email: {
-          equals: body?.email,
+          equals: email,
         },
       },
     });
@@ -33,7 +69,7 @@ export async function POST(request: Request) {
       properties: {
         Email: {
           type: "email",
-          email: body?.email,
+          email: email,
         },
         Name: {
           type: "title",
@@ -41,7 +77,7 @@ export async function POST(request: Request) {
             {
               type: "text",
               text: {
-                content: body?.name,
+                content: name,
               },
             },
           ],
@@ -52,7 +88,7 @@ export async function POST(request: Request) {
             {
               type: "text",
               text: {
-                content: body?.walletAddress || "Not available",
+                content: walletAddress,
               },
             },
           ],
@@ -68,9 +104,9 @@ export async function POST(request: Request) {
     try {
       const db = await getDatabase();
       await db.collection('waitlist_emails').insertOne({
-        email: body?.email,
-        name: body?.name,
-        walletAddress: body?.walletAddress,
+        email: email,
+        name: name,
+        walletAddress: walletAddress,
         createdAt: new Date(),
         notionId: response.id
       });

@@ -169,9 +169,14 @@ RESEND_API_KEY=your_resend_api_key
 
 # MongoDB for duplicate prevention and rate limiting
 MONGODB_URI=your_mongodb_connection_string
+
+# Verification token secret - Generate a random 32+ character string
+VERIFICATION_TOKEN_SECRET=your_random_secret_here
 ```
 
 **⚡ The CDP Project ID is all you need to get started!** The other services add waitlist-specific features but aren't required for wallet creation.
+
+**🔒 Security Note**: The verification token system ensures only users who complete CDP OTP verification can join your waitlist - no bypassing the frontend!
 
 ---
 
