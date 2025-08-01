@@ -2,11 +2,11 @@
 
 **Turn every email signup into a crypto wallet.** No seed phrases, no MetaMask, no crypto knowledge required.
 
-Built with [CDP Embedded Wallets](https://docs.cdp.coinbase.com/embedded-wallets/docs) to showcase how Web3 can feel exactly like Web2. Your users just enter their email and get OTP verification - they'll never know they just created a crypto wallet.
+Built with [CDP Embedded Wallets](https://docs.cdp.coinbase.com/embedded-wallets/welcome) to showcase how Web3 can feel exactly like Web2. Your users just enter their email and get OTP verification - they'll never know they just created a crypto wallet.
 
-[![Get CDP Keys](https://img.shields.io/badge/🔑_Get_CDP_Keys_FREE-orange?style=for-the-badge)](https://portal.cdp.coinbase.com/)
-[![Fork Template](https://img.shields.io/badge/🍴_Fork_This_Template-black?style=for-the-badge)](https://github.com/ashnouruzi/waitlist-cdp)
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-blue?style=for-the-badge)](#)
+[![Get CDP Keys](https://img.shields.io/badge/🔑_Get_Your_CDP_Keys-orange?style=for-the-badge)](https://portal.cdp.coinbase.com/)
+[![Fork Template](https://img.shields.io/badge/🍴_Fork_This_Template-black?style=for-the-badge)](https://github.com/Must-be-Ash/email-wallets)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-blue?style=for-the-badge)](https://emailwallets.com)
 
 ![Banner](./app/opengraph-image.png)
 
@@ -21,7 +21,7 @@ Built with [CDP Embedded Wallets](https://docs.cdp.coinbase.com/embedded-wallets
 5. **Deploy** - You're now collecting wallet addresses from email signups!
 
 ```bash
-git clone https://github.com/ashnouruzi/waitlist-cdp
+git clone https://github.com/Must-be-Ash/email-wallets
 cd waitlist-cdp
 npm install
 cp .env.example .env.local
@@ -57,33 +57,35 @@ npm run dev
 
 ---
 
-## 🚀 What You Can Build With This Foundation
+## 🚀 What You Can Build With Email + Wallet Magic
 
-**This template isn't just a waitlist - it's your launchpad for building Web3 apps that feel like Web2:**
+**Now that you can collect emails AND wallet addresses simultaneously, here's what becomes possible:**
 
-### 💰 **Creator Economy Platforms**
-- **Tip Jars**: Let fans support creators globally without payment restrictions
-- **Course Platforms**: Sell educational content with instant, global payments
-- **Subscription Services**: Recurring payments that work in every country
-- **NFT Drops**: Email-based wallet creation for exclusive collectibles
+### 🎁 **Launch & Early Supporter Rewards**
+- **Automatic NFT Airdrops**: Email signup = instant early supporter NFT to their new wallet
+- **Token Presales**: Email waitlist gets exclusive presale instructions with wallet ready to receive
+- **Founder's Pass NFTs**: First 100 signups get special founder NFTs with future utility
+- **Early Access Tokens**: Automatically send governance tokens to early community members
 
-### 🛍️ **E-commerce & Marketplaces** 
-- **Global Stores**: Accept payments from customers traditional processors can't serve
-- **Digital Products**: Instant delivery with blockchain verification
-- **Freelance Platforms**: Pay contractors globally without banking delays
-- **Crowdfunding**: Raise funds from anywhere in the world instantly
+### 🌟 **Community Building with Ownership**
+- **Proof of Interest**: Every email signup is also a wallet holder (instant community ownership)
+- **Engagement Rewards**: Send tokens/NFTs for newsletter opens, referrals, social shares
+- **Community Governance**: Email subscribers can vote with tokens you've airdropped
+- **Exclusive Drops**: Target future NFT/token launches to your email+wallet database
 
-### 📱 **Consumer Applications**
-- **Social Platforms**: Monetize content with global, instant micropayments
-- **Gaming**: In-game purchases and rewards without payment friction
-- **Loyalty Programs**: Blockchain-based points that users actually own
-- **Event Platforms**: Ticket sales with NFT proof-of-attendance
+### 🔮 **Web2 → Web3 Onboarding Experiments** 
+- **Invisible Web3**: Users think they joined a waitlist, but they're now Web3-ready
+- **Progressive Disclosure**: Start with familiar email flow, gradually introduce Web3 features
+- **Zero-Friction Adoption**: No "Connect Wallet" barriers - they already have one
+- **Cross-Chain Opportunities**: Use email for communication, wallet for multi-chain interactions
 
-### 🏢 **Business Tools**
-- **SaaS Billing**: Usage-based pricing for global customers
-- **API Monetization**: Charge for API calls with crypto micropayments
-- **Affiliate Programs**: Instant, global commission payments
-- **Donation Platforms**: Accept contributions from supporters worldwide
+### 🎯 **Targeting Web2 Users with Web3 Backend**
+- **Seamless Crypto Integration**: Accept crypto payments from users who don't know it's crypto
+- **Global Reach**: Serve users in countries traditional payment processors can't reach
+- **Instant Settlement**: Get paid in 90 seconds instead of 7-14 days
+- **Future-Proof Database**: When Web3 adoption grows, your users are already ready
+
+**💡 The Experiment:** You now have both communication channels (email) AND on-chain identity (wallet) for every user. What interesting combinations can you build?
 
 ---
 
@@ -269,8 +271,8 @@ Every fork creates new possibilities:
 
 Every email signup becomes a wallet. Every wallet becomes an opportunity. Every opportunity becomes a global business.
 
-**[🔑 Get Your Free CDP API Keys](https://portal.cdp.coinbase.com/) → [🍴 Fork This Template](https://github.com/ashnouruzi/waitlist-cdp) → 🚀 Build the Future**
+**[🔑 Get Your Free CDP API Keys](https://portal.cdp.coinbase.com/) → [🍴 Fork This Template](https://github.com/Must-be-Ash/email-wallets) → 🚀 Build the Future**
 
 ---
 
-*Built with [CDP Embedded Wallets](https://www.coinbase.com/developer-platform) - crypto infrastructure that feels like Web2.*# email-wallets
+*Built with [CDP Embedded Wallets](https://www.coinbase.com/developer-platform) - crypto infrastructure that feels like Web2.*
