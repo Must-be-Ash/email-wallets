@@ -52,11 +52,11 @@ export default function Home() {
       setLoading(true);
 
       try {
-        console.log("Attempting to sign in with email:", email);
+        console.log("Attempting to sign in with email");
         
         // Check if user is already authenticated and sign out if needed
         if (currentUser) {
-          console.log("User already authenticated, signing out first:", currentUser);
+          console.log("User already authenticated, signing out first");
           await signOut();
           // Wait longer to ensure signout completes and state updates
           await new Promise(resolve => setTimeout(resolve, 1000));
@@ -82,7 +82,7 @@ export default function Home() {
           }
         }
         
-        console.log("Sign in result:", result);
+        console.log("Sign in result:", result ? "success" : "failed");
         
         if (result && result.flowId) {
           setFlowId(result.flowId);
