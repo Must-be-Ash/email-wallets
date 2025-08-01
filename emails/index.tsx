@@ -17,46 +17,53 @@ interface EmailProps {
 export const NotionWaitlistEmail = ({ userFirstname }: EmailProps) => (
   <Html>
     <Head />
-    <Preview>Thanks for Joining the Waitlist, {userFirstname}! 🎉</Preview>
+    <Preview>Welcome! Your crypto wallet has been created 🎉</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`https://nextjs-notion-waitlist.vercel.app/waitlist-logo.png`}
+          src={`https://emailwallets.com/waitlist-logo.png`}
           width="220"
           height="100"
-          alt="Notion Waitlist Logo"
+          alt="Email Wallets Logo"
           style={logo}
         />
         <Text style={greeting}>Hi {userFirstname},</Text>
         <Text style={paragraph}>
-          Thanks for joining the waitlist for our Next.js + Notion CMS waitlist
-          template! I'm Lakshay, the developer behind this project. I'm glad to
-          have you on board.
+          🎉 <strong>Welcome to the future!</strong> You just created a crypto wallet with nothing but your email address.
         </Text>
         <Text style={paragraph}>
-          I'll keep you posted on the progress and notify you as soon as it's
-          ready for you to use. In the meantime, if you have any questions or
-          feedback, don't hesitate to reach out by replying directly to{" "}
-          <a href="mailto:lakshb.work@gmail.com" style={link}>
-            this email {""}
+          Here's what just happened:
+          <br />
+          ✅ Created a secure, non-custodial crypto wallet
+          <br />
+          ✅ No seed phrases to remember or lose
+          <br />
+          ✅ Ready to receive crypto payments globally
+          <br />
+          ✅ Works on any device, anywhere in the world
+        </Text>
+        <Text style={paragraph}>
+          You're now part of an exclusive group experimenting with the next generation of Web3 - where crypto feels just like any modern app.
+        </Text>
+        <Text style={paragraph}>
+          Want to build something like this? Check out the{" "}
+          <a href="https://portal.cdp.coinbase.com/" style={link}>
+            Coinbase Developer Platform
           </a>
-          — I'm here to listen!
-        </Text>
-        <Text style={paragraph}>
-          You can also follow me on X/Twitter for updates:{" "}
-          <a href="https://x.com/blakssh" style={link}>
-            @blakssh
+          {" "}or fork our{" "}
+          <a href="https://github.com/Must-be-Ash/email-wallets" style={link}>
+            open-source template
           </a>
         </Text>
         <Text style={signOff}>
-          Best regards,
+          Welcome to invisible Web3! 🚀
           <br />
-          Lakshay
+          Coinbase Developer Platform
         </Text>
         <Hr style={hr} />
         <Text style={footer}>
-          You received this email because you signed up for the Notion waitlist.
-          If you believe this is a mistake, feel free to ignore this email.
+          You received this email because you signed up and automatically created a crypto wallet.
+          Powered by CDP Embedded Wallets.
         </Text>
       </Container>
     </Body>
@@ -102,7 +109,7 @@ const paragraph = {
 };
 
 const link = {
-  color: "#0000FF",
+  color: "#87CEEB",
   textDecoration: "underline",
 };
 
