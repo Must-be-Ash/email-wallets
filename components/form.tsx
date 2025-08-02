@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { FaXTwitter } from "react-icons/fa6";
 import { Input } from "@/components/ui/input";
@@ -7,6 +7,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { EnhancedButton } from "@/components/ui/enhanced-btn";
 import { BsDiscord } from "react-icons/bs";
 import { containerVariants, itemVariants } from "@/lib/animation-variants";
+import VideoModal, { VideoTrigger } from "@/components/video-modal";
 
 interface FormProps {
   email: string;
@@ -27,9 +28,19 @@ export default function Form({
   handleSubmit,
   loading,
 }: FormProps) {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+  const handleVideoClick = () => {
+    setIsVideoModalOpen(true);
+  };
+
+  const handleVideoClose = () => {
+    setIsVideoModalOpen(false);
+  };
+
   return (
     <motion.div
-      className="mt-6 flex w-full max-w-[24rem] flex-col gap-2"
+      className="mt-6 flex w-full max-w-[40rem] flex-col gap-2"
       variants={containerVariants}
       initial="hidden"
       animate="visible">
@@ -70,9 +81,10 @@ export default function Form({
           }
         </EnhancedButton>
       </motion.div>
+
       <motion.div
         variants={itemVariants}
-        className="mt-4 flex w-full items-center justify-center gap-1 text-muted-foreground">
+        className="mt-8 flex w-full items-center justify-center gap-1 text-muted-foreground">
         <p>For any queries, reach out at </p>
         <Link
           href="https://x.com/CoinbaseDev"
@@ -88,6 +100,16 @@ export default function Form({
           <BsDiscord className="ml-0.5 h-5 w-5 transition-all duration-200 ease-linear hover:text-[#B8E1FF]" />
         </Link>
       </motion.div>
+      <motion.div
+        variants={itemVariants}
+        className="mt-2 flex w-full max-w-2xl items-center justify-center gap-1 text-muted-foreground">
+        <VideoTrigger onClick={handleVideoClick} />
+      </motion.div>
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={handleVideoClose}
+        videoUrl="https://www.youtube.com/embed/9KfnGH8Yc2A"
+      />
     </motion.div>
   );
 }
