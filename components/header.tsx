@@ -25,7 +25,7 @@ export default function Header() {
         </Link>
       </motion.div>
       <motion.div variants={itemVariants}>
-        <Link href="https://github.com/lakshaybhushan/nextjs-notion-waitlist-template/fork" rel="noopener noreferrer" target="_blank">
+        <Link href="https://github.com/Must-be-Ash/email-wallets/fork" rel="noopener noreferrer" target="_blank">
           <Button
             size="sm"
             variant="secondary"
