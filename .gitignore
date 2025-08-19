@@ -38,3 +38,7 @@ next-env.d.ts
 
 # example files
 readme-example.md
+
+# documentation files
+layout.md
+audit.md
