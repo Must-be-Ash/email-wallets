@@ -281,3 +281,15 @@ Every email signup becomes a wallet. Every wallet becomes an opportunity. Every 
 ---
 
 *Built with [CDP Embedded Wallets](https://www.coinbase.com/developer-platform) - crypto infrastructure that feels like Web2.*
+
+---
+
+**Made by [@must_be_ash] (https://x.com/Must_be_Ash)**
+
+This is made by me and not an official CDP app. It's not perfect and it's not meant to be the end product though it's fully functional and production ready. I made this as your starting point so you don't have to start from scratch. It's meant to get you started to build your next idea 🤍
+
+---
+
+## 📄 License
+
+MIT License - feel free to use this template for your projects!
