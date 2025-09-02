@@ -14,7 +14,7 @@ export default function Header() {
       animate="visible"
       className="fixed flex right-0 left-0 justify-between top-0 z-[50] m-4">
       <motion.div variants={itemVariants}>
-        <Link href="https://intelligent-sailor-e5c.notion.site/242fdef2343180c69360d6fb47b7f8cd?v=242fdef2343181df8070000cfc46a4f3&pvs=143" rel="noopener noreferrer" target="_blank">
+        <Link href="https://intelligent-sailor-e5c.notion.site/262fdef2343180a28b91e5fec09902af?v=262fdef2343181b4baa6000c61bc8d6b" rel="noopener noreferrer" target="_blank">
           <Button
             size="sm"
             variant="secondary"
